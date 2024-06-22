@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/ohm.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&family=Playwrite+PL:wght@100..400&display=swap" rel="stylesheet">
+    <title>Espacio Portia</title>
+   
+    <link rel="stylesheet" href="./output.css">
+</head>
+<body class="bg-amber-200">
+     
+  <nav class="bg-amber-300 sticky top-0  z-50 ">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-wh hover:bg-amber-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="./assets/ohm.ico" alt="Espacio Portia">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              
+              <a href="./pages/yoga.html" class="bg-amber-300 hover:bg-amber-400 hover:text-white rounded-md px-3 py-2 text-2xl font-mediumtransition-colors duration-300 ">Yoga</a>
+              <a href="./pages/reflexologia.html" class="bg-amber-300 hover:bg-amber-400 hover:text-white rounded-md px-3 py-2 text-2xl font-mediumtransition-colors duration-300 ">Reflexologia</a>
+              <a href="./pages/kundalini.html" class="bg-amber-300 hover:bg-amber-400 hover:text-white rounded-md px-3 py-2 text-2xl font-mediumtransition-colors duration-300 ">Kundalini</a>
+              <a href="#" class="bg-amber-300 hover:bg-amber-400 hover:text-white rounded-md px-3 py-2 text-2xl font-mediumtransition-colors duration-300 ">Horarios</a>
+              <a href="#" class="bg-amber-300 hover:bg-amber-400 hover:text-white rounded-md px-3 py-2 text-2xl font-mediumtransition-colors duration-300 ">Contacto</a>
+            </div>
+          </div>
+        </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="./pages/yoga.html" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Yoga</a>
+        <a href="./pages/reflexologia.html" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Reflexologia</a>
+        <a href="./pages/kundalini.html" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Kundalini</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Horarios</a>
+        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">Contactos</a>
+      </div>
+    </div>
+  </nav>
+  <div class="relative bg-cover bg-center h-72 mt-0">
+    <div class="absolute inset-0">
+        <!-- Div para la imagen de fondo con desenfoque -->
+        <div class="w-full h-full bg-cover bg-center blur-0" style="background-image: url('./assets/portadaIndex.avif');"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center px-6">
+            <h1 class="text-5xl font-semibold pb-10 text-amber-400">Nuestros Cursos</h1>
+           
+        </div>
+       
+    </div>
+  </div>
+ 
+ 
+  <div class="flex min-h-screen items-center justify-center bg-amber-200 pt-0 border-b-2 border-amber-600 ">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="group relative  z-index: 50 rounded-l-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72 " >
+          <img class="h-full w-full  object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/img1_yoga.avif" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Yoga</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">¡Transforma tu vida con nuestro curso de yoga! Encuentra equilibrio, bienestar y paz interior. </p>
+          <button  id ="inscripcionYoga" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+      <div class="group relative rounded-md items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="h-full w-full  object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/Ref.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Reflexologia</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Revitaliza tu bienestar con nuestro curso de reflexología! Aprende técnicas para aliviar el estrés y mejorar tu salud</p>
+          <button  id ="inscripcionRef" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+      <div class="group relative  rounded-r-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/k.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Kundalini</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Aprende técnicas ancestrales para activar y equilibrar tu energía vital, transformando tu mente y cuerpo.</p>
+          <button id ="inscripcionKun" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+    </div>
+   
+
+    </div>
+     <div class="flex min-h-screen items-center justify-center bg-amber-200 mt-0 ">
+    
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 ">
+      <div class="group relative  z-index: 50 rounded-l-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72 " >
+          <img class="h-full w-full  object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/Reiki.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Reiki</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            Fórmate en la técnica del  Reiki, que utiliza la energía universal para sanar emocional y espiritualmente, aprenderás los fundamentes de esta técnica japonesa. </p>
+          <button  id ="inscripcionYoga" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+      <div class="group relative rounded-md items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="h-full w-full  object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/Yoga_ni.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Yoga para niños</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Descubre el yoga para niños, que promueve la salud física y emocional con posturas divertidas y técnicas de respiración adaptadas desde temprana edad.</p>
+          <button  id ="inscripcionYN" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+      <div class="group relative  rounded-r-lg items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="./assets/pilates.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="font-dmserif text-3xl font-bold text-white pb-3">Pilates</h1>
+          <p class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"> Explora nuestro curso de Pilates, que fortalece el cuerpo, mejora la flexibilidad y promueve una postura saludable mediante ejercicios precisos y controlados.</p>
+          <button id ="inscripcionPil" class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Informacion</button>
+        </div>
+      </div>
+    </div>
+   
+   
+    
+        
+    
+    </div>
+    <div class=" mb-10 bg-gradient-to-r from-amber-300 via-amber-500 to-amber-600 text-center p-8 max-w-md mx-auto rounded-lg">
+        <h2 class="text-4xl font-bold text-white py-8">Cotizar un curso</h2>
+        
+        <div  class=" font-bold  mb-6">
+            <label for="curso" class="block text-white text-center text-2xl " >Selecciona el curso</label>
+            <select id="curso" class="mt-2 p-2 w-full rounded-md bg-yellow-200">
+                <option selected disabled>Seleccionar...</option>
+            </select>
+        </div>
+        
+        <div id="notificarprecio" class=" font-bold  mb-6"></div>
+        
+        <div id="select-cuotas-div" class=" font-bold  mb-6">
+            <label for="cuotas" class="block text-white text-center text-2xl ">Número de cuotas</label>
+            <select id="cuotas" class="mt-2 p-2 w-full rounded-md bg-yellow-200">
+                <option selected disabled>Elegir número de cuotas</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        
+        <div class=" font-bold mb-6">
+            <button class="btoCotizar bg-amber-700 hover:bg-amber-800 text-white font-bold py-2 px-4 rounded" id="btnCotizarCurso">Cotizar</button>
+        </div>
+        
+        <div id="errorFCampos" class="mb-6 font-bold   "></div>
+        <div id="precioTotal" class="mb-6 font-bold  "></div>
+        
+        <div class="mb-6">
+            <button class="btnUltimaCot bg-amber-700 hover:bg-amber-800 text-white font-bold py-2 px-4 rounded" id="btnUltimacot">Ultima cotizacion</button>
+        </div>
+    </div>
+    <script  defer src="js/datosCursos.js"></script>
+    <script  defer src="js/simulador.js"></script>
+
+    
+
+
+   
+  
+</body>
+</html>
+ <!-- npx tailwindcss -i ./input.css -o ./output.css --watch
+  
+ este comando es super impotante para que fuincione tailwind. hay qeu ejecutarlo
+ cuando comience el proyecto.
+ 
+ -->
