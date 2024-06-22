@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output.css">
     <title>Kunalini</title>
 </head>
 <body>
-    <h1>jjadskjkjkdasjk</h1>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-6 text-green-600">Inscripción Curso Yoga</h1>
+        <div class="flex items-center justify-center">
+            <form id="formInscripcion" class="bg-green-200 p-6 rounded-lg shadow-md w-full max-w-md">
+                <div class="mb-4">
+                    <label for="nombre"  class="block text-green-700 text-lg font-bold mb-2 text-left">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre"  placeholder="Ingrese su nombre " class="  text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="apellido" class="block text-green-700 text-lg font-bold mb-2 text-left">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido"  class="text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="direccion" class="block text-green-700 text-lg f font-bold mb-2 text-left">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ingrese su direccion " class="text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="telefono" class="block text-green-700 text-lg f font-bold mb-2 text-left">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su telefono "  class="text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="flex items-center justify-center">
+                    <button type="button" id="botonInscripcion" class="bg-green-900 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Inscribirse
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
