@@ -37,7 +37,7 @@
                         <div class="flex space-x-4 text-green-600">
                             <a href="../index.html" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300  ">Cursos</a>
                             <a href="./reflexologia.html" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300 ">Reflexologia</a>
-                            <a href="./pages/kundalini.html" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300 ">Kundalini</a>
+                            <a href="./kundalini.html" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300 ">Kundalini</a>
                             <a href="#" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300 ">Horarios</a>
                             <a href="#" class="bg-green-200 hover:bg-gradient-to-r from-green-400 to-green-600  hover:text-white rounded-md px-3 py-2 text-2xl font-medium transition-colors duration-300 ">Contacto</a>
                         </div>
@@ -50,7 +50,7 @@
     <div class="relative bg-cover bg-center h-72 mt-0">
         <div class="absolute inset-0">
             <!-- Div para la imagen de fondo con desenfoque -->
-            <div class="w-full h-full bg-cover bg-center blur-sm" style="background-image: url('../assets/portada_P_Y.avif');"></div>
+            <div id="imagenFondo" class="w-full h-full bg-cover bg-center blur-sm" style="background-image: url('../assets/portada_P_Y.avif');"></div>
         </div>
         <div class="absolute inset-0 flex items-center justify-center">
             <div class="text-center px-6">
@@ -86,13 +86,16 @@
     </div>
 
     <div id="horarioContainer"></div>
+    <div id="mostrarInscripto"></div>
+   
 </div>
 <div>
     
     
 </div>
+
     <script  defer src="../js/datosCursos.js"></script>
-    <script  defer src="../js/InscripcionCurso.js"></script>
+    <script  defer src="../js/inscripcionYoga.js"></script>
     <script  defer src="../js/simulador.js"></script>
    
 
