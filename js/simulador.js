@@ -80,11 +80,20 @@ function cotizarCurso() {
     const numeroCuotas = parseInt(selectCuotas.value);
     if (cursoSeleccionado && numeroCuotas ) {
         const precioTotal = cursoSeleccionado.precio / numeroCuotas;
-        divPrecioTotal.textContent = `Precio por cuota (${numeroCuotas} ): $${precioTotal.toFixed(2)}`;
+        Swal.fire({
+            title: `Cotización para ${cursoSeleccionado.nombre}`,
+            text: `Precio por cuota (${numeroCuotas}): $${precioTotal.toFixed(2)}`,
+            imageUrl: '../assets/geld.gif',
+            imageWidth: 100,
+            imageHeight: 100,
+            confirmButtonText: 'Desea cotizar otro curso?',
+            background: '#fde68a',
+            timer:9000,
+        });
         guardarCotizacionUltimoCursoLS();
     }
     else  {
-       // mostrarSweet();
+      
        alertFaltaCampos();
     }
        
@@ -121,8 +130,6 @@ botonultimaCot.addEventListener("click", ()=> {
             imageHeight: 100,
             title: 'No se ha realizado cotizaciones ',
             showConfirmButton: false,
-
-           
             timer: 3000,
             background: '#fde68a',
 

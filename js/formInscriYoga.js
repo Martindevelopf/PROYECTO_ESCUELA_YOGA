@@ -1,24 +1,24 @@
-document.addEventListener('DOMContentLoaded', (event) => { // DomContenLoaded para no tener poblemas con la carga del DOM
+document.addEventListener('DOMContentLoaded', (event) => { 
     const form = document.getElementById('yogaForm');
-    const resultDiv = document.getElementById('result');
     const verInscriptosBtn = document.getElementById('verInscriptos');
-    const inscriptos = [];
 
-    form.addEventListener('submit', (e) => {
+    // BUSCO el curso de Yoga en el array CURSOS
+    const cursoYoga = CURSOS.find(curso => curso.nombre === 'Yoga');
+
+    form.addEventListener('submit', (e) => { 
         e.preventDefault();
 
-        if (inscriptos.length >= 2) {
+        if (cursoYoga.inscriptosYoga.length >= 10) {
             Swal.fire({
                 imageUrl: '../assets/alarma_10A.gif',
                 imageWidth: 100, 
                 imageHeight: 100,
-                title: 'Maximo permitido 10 alumnos!!! ',
+                title: '¡Máximo permitido 10 alumnos!',
                 showConfirmButton: false,
                 timer: 3000,
                 background: '#bbf7d0',
-    
             });
-            return;// sin este return no corta y si bien me sale el cartel me sigue haciendo push al array inscriptos
+            return;
         }
 
         const nombre = document.getElementById('nombre').value;
@@ -26,22 +26,27 @@ document.addEventListener('DOMContentLoaded', (event) => { // DomContenLoaded pa
         const direccion = document.getElementById('direccion').value;
         const telefono = document.getElementById('telefono').value;
 
-        const inscripto = { // creo objeto inscripto tomando lo que entra  por el form
+        if (isNaN(telefono)) {
+            errorNAN();
+            return;
+        }
+
+        const inscripto = {
             nombre,
             apellido,
             direccion,
             telefono
         };
 
-        inscriptos.push(inscripto);
-        form.reset();// dejo en blanco nuevamente el form para una nueva inscpriccion
+        cursoYoga.inscriptosYoga.push(inscripto);
+        form.reset();
 
         Swal.fire({
             imageUrl: '../assets/namaste.gif',
             imageWidth: 100, 
             imageHeight: 100,
             title: 'Inscripción exitosa',
-            text: `Bienvenido ${nombre} ${apellido} a YOGA  `,
+            text: `Bienvenido ${nombre} ${apellido} a YOGA`,
             showConfirmButton: false,
             timer: 3000,
             background: '#bbf7d0',
@@ -49,25 +54,41 @@ document.addEventListener('DOMContentLoaded', (event) => { // DomContenLoaded pa
     });
 
     verInscriptosBtn.addEventListener('click', () => {
-        if (inscriptos.length === 0) {
+        if (cursoYoga.inscriptosYoga.length === 0) {
             Swal.fire({
                 imageUrl: '../assets/alerta.gif',
                 imageWidth: 100, 
                 imageHeight: 100,
-                title: 'Curso Vacio ',
+                title: 'Curso Vacío',
                 showConfirmButton: false,
                 timer: 3000,
                 background: '#bbf7d0',
-    
             });
+            return;
         }
 
-        let inscriptosList = '<ul class="list-disc pl-5">';
-        inscriptos.forEach((inscripto, index) => {
-            inscriptosList += `<li>${index + 1}. ${inscripto.nombre} ${inscripto.apellido} - ${inscripto.direccion} - ${inscripto.telefono}</li>`;
-        });
-        inscriptosList += '</ul>';
-        resultDiv.innerHTML = inscriptosList;
-    });
-});
+         // Declara e inicializa inscriptosList antes de usarlo
+         let inscriptosList = '<ul class="list-disc pl-5">';
+         cursoYoga.inscriptosYoga.forEach((inscripto, index) => {
+             inscriptosList += `<li>${index + 1}. ${inscripto.nombre} ${inscripto.apellido} - ${inscripto.direccion} - ${inscripto.telefono}</li>`;
+         });
+         inscriptosList += '</ul>';
+ 
+         Swal.fire({
+             title: `Inscriptos ${cursoYoga.nombre}`, 
+             html: inscriptosList,
+             showConfirmButton: true,
+             background: '#bbf7d0',
+         });
+     });
 
+    function errorNAN(){
+        Swal.fire({
+            icon: "error",
+            title: 'Debe ingresar un teléfono válido',
+            showConfirmButton: false,
+            timer: 3000,
+            background: '#bbf7d0',
+        });
+    }
+});
