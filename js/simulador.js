@@ -86,9 +86,22 @@ function cotizarCurso() {
             imageUrl: '../assets/geld.gif',
             imageWidth: 100,
             imageHeight: 100,
-            confirmButtonText: 'Desea cotizar otro curso?',
+            confirmButtonText: `Desea inscribirse en ${cursoSeleccionado.nombre}`,
             background: '#fde68a',
             timer:9000,
+        }).then((result) => {// voy preguntando si el codigo es tal para redireccionar a la inscripcion correspondiente
+            if (result.isConfirmed && cursoSeleccionado.codigo === 1) {
+              
+                window.location.href = './pages/yoga.html';
+
+            }else if(result.isConfirmed && cursoSeleccionado.codigo === 2){
+                window.location.href = './pages/reflexologia.html';
+
+            }
+            else {
+                window.location.href ='./pages/kundalini.html'
+
+            }
         });
         guardarCotizacionUltimoCursoLS();
     }
@@ -136,26 +149,3 @@ botonultimaCot.addEventListener("click", ()=> {
         });
     }
 })
-
-
-/////////////////////// para el futuro los demas cursos
-/*
-//btn inscripcion Reflexologia
-
-function redirigir_btn(url) {
-    window.location.href = url;
-}
-const inscripcionRefBtn = document.getElementById('inscripcionRef');
-inscripcionRefBtn.addEventListener('click', function() {
-            redirigir_btn("pages/reflexologia.html"); 
-});
-    
-//btn inscripcion Kundalini
-
-function redirigir_btn(url) {
-    window.location.href = url;
-}
-const inscripcionKunBtn = document.getElementById('inscripcionKun');
-inscripcionKunBtn.addEventListener('click', function() {
-            redirigir_btn("pages/kundalini.html"); 
-});*/

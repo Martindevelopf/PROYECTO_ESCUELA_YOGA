@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
             return;
         }
-
+// anexo a los datos del form por el id
         const nombre = document.getElementById('nombre').value;
         const apellido = document.getElementById('apellido').value;
         const direccion = document.getElementById('direccion').value;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             errorNAN();
             return;
         }
-
+// creo un objeto trayendo lo que se ingresa en los campos siguientes...
         const inscripto = {
             nombre,
             apellido,
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             telefono
         };
 
-        cursoYoga.inscriptosYoga.push(inscripto);
+        cursoYoga.inscriptosYoga.push(inscripto);// tomo estos datos ingresados y los ingreso al array inscriptosYoga
         form.reset();
 
         Swal.fire({
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
 
-         // Declara e inicializa inscriptosList antes de usarlo
+         // creo formato html para depsues usarlo en el sweet
          let inscriptosList = '<ul class="list-disc pl-5">';
          cursoYoga.inscriptosYoga.forEach((inscripto, index) => {
              inscriptosList += `<li>${index + 1}. ${inscripto.nombre} ${inscripto.apellido} - ${inscripto.direccion} - ${inscripto.telefono}</li>`;
