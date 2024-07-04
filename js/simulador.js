@@ -1,6 +1,5 @@
 
-
-
+//// anexo a DOM
 const selectCurso = document.querySelector("select#curso");
 const notificarPrecio = document.querySelector("div#notificarprecio");
 const botonCotizar = document.querySelector("button#btnCotizarCurso");
@@ -12,29 +11,50 @@ const botonInscripcion = document.getElementById('inscripcionYoga');
 const btnInscripcionRef = document.getElementById("inscripcionRef")
 const btnInscripcionK = document.getElementById("inscripcionKun")
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-    // en ves de usar un a href html , hacerlo con un evento click
-botonInscripcion.addEventListener('click', () => {
-            window.location.href = './pages/yoga.html';
+
+function alertFaltaCampos() {
+    Swal.fire({
+      title: "Debe ingresar todos los campos!",
+    imageUrl: '../assets/yogagif_.gif',
+      width: 400,
+      padding: "2em",
+      color: "#000000",
+      timer: 4000,
+      showConfirmButton: false,
+      background: "#fde68a ",
+      
     });
+  }
+  
+    // en ves de usar un <a> href html , hacerlo con un evento click
+botonInscripcion.addEventListener('click', () => {
 
+            window.location.href = './pages/yoga.html';
 
+    });
 btnInscripcionRef.addEventListener("click",()=>{
-        
-    window.location.href = './pages/reflexologia.html';
+
+        window.location.href = './pages/reflexologia.html';
+
 });
+
 btnInscripcionK.addEventListener("click",()=>{
+
 
 window.location.href ='./pages/kundalini.html'
 
 })
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
+// Fn para recorrer el array de CURSOS EN DATOSCURSOS.JS y va agregando el nombre y el value.
 function cargarCursos() {
     CURSOS.forEach((curso) => {
         selectCurso.innerHTML += `<option value="${curso.codigo}">${curso.nombre}</option>`;
-    });//recorre el array de CURSOS EN DATOSCURSOS.JS y va agregando el nombre y el value.
+    });
 }
+
 
 function mostrarPrecio() {
     const cursoSeleccionado = CURSOS.find(curso => curso.codigo == selectCurso.value);
@@ -64,10 +84,8 @@ function cotizarCurso() {
         guardarCotizacionUltimoCursoLS();
     }
     else  {
-        divErrorFCampos.textContent = "DEBE LLENAR TODO LOS CAMPOS!";
-        setTimeout(() => {
-            divErrorFCampos.textContent = "";
-        }, 3000); 
+       // mostrarSweet();
+       alertFaltaCampos();
     }
        
 
@@ -83,10 +101,32 @@ cargarCursos();
 botonultimaCot.addEventListener("click", ()=> {
     const ultimaCotizacion = recuperarUltimaCotizacion()
 
-    if (ultimaCotizacion !== null) { //si se cumple muestra lo que tiene el ls sino es que no se ha cargado nada
-        alert("Su última cotización fue el: " + ultimaCotizacion.fecha)
+    if (ultimaCotizacion !== null) {
+        // Si hay una cotización previa, mostrar con SweetAlert
+        Swal.fire({
+            title: 'Última cotización',
+            text: 'Su última cotización fue el: ' + ultimaCotizacion.fecha,
+            imageUrl: '../assets/reloj-de-arena_.gif',
+            showConfirmButton: false,
+            timer: 3000,
+            imageWidth: 100, // seteo medidas largo/ancho
+            imageHeight: 100,
+            background: '#fde68a',
+        });
     } else {
-        alert("No has realizado cotizaciones previamente.")
+        
+        Swal.fire({
+            imageUrl: '../assets/alerta.gif',
+            imageWidth: 100, 
+            imageHeight: 100,
+            title: 'No se ha realizado cotizaciones ',
+            showConfirmButton: false,
+
+           
+            timer: 3000,
+            background: '#fde68a',
+
+        });
     }
 })
 

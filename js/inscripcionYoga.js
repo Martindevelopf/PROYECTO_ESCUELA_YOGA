@@ -1,7 +1,6 @@
-
 const VerHorariosYoga = document.getElementById("BtnVerHorariosYoga");
 const btnInscripcion =document.getElementById("BtnInscribirse")
-const form = document.querySelector("formularioIY")
+
 
 //const FormYoga = document.getElementById("formularioIY")
 
@@ -12,7 +11,7 @@ function cargarHorarioYoga (){
                 <div class="w-full p-4 overflow-auto flex items-center justify-center text-lg text-center">
                     <table class="min-w-full table-auto bg-green-200 border-collapse rounded-lg overflow-hidden">
                         <thead>
-                            <tr class="bg-green-900 text-white">
+                            <tr class="bg-green-900 text-green-900">
                                 <th class="p-2 border border-gray-300">Hora</th>
                                 <th class="p-2 border border-gray-300">Lunes</th>
                                 <th class="p-2 border border-gray-300">Martes</th>
@@ -112,6 +111,10 @@ function cargarHorarioYoga (){
             horarioContainer.innerHTML = cargarHorarioYoga();
             VerHorariosYoga.style.display = 'none'; //con none lo oculto al boton de ver horarios
         });
+    btnInscripcion.addEventListener('click', () => {
+
+        window.location.href = '../pages/inscripcionYoga.html';
+    });
     
 function cargarFormulario(){
     return `
@@ -146,22 +149,11 @@ function cargarFormulario(){
     </div>
     `;
 }
-document.getElementById('BtnInscribirse').addEventListener('click', () => {
-        const formularioConteiner = document.getElementById('contenedorInfo');
-       formularioConteiner.innerHTML = cargarFormulario();
-       document.getElementById('BtnInscribirse').style.display = 'none'; 
-       document.getElementById('BtnVerHorariosYoga').style.display = 'none'; 
+
+//const BtnInscripcionYoga = document.getElementById("botonInscripcionYoga")
 
 
-    });
 
-
-function cargaralgo(){
-
-    return `
-    <div><p>Prueba!!!</p>
-    </div>`;
-}
 
 // Función para manejar el click en el botón de inscripción (asumiendo que se genera dinámicamente)
 
@@ -268,3 +260,14 @@ function cargaralgo(){
 //     .then((stream)=> videoStreaming.srcObject = stream)
 //     .catch((error)=> console.error("El usuario rechazó el acceso a la webcam."), error)    
 // }
+
+
+// document.getElementById('BtnInscribirse').addEventListener('click', () => {
+//     const formularioConteiner = document.getElementById('divFormYoga');
+//    formularioConteiner.innerHTML = cargarFormulario();
+//    document.getElementById('BtnInscribirse').style.display = 'none'; 
+//    document.getElementById('BtnVerHorariosYoga').style.display = 'none'; 
+
+
+// });
+// const BtnInscripcionYoga = document.getElementById("formularioIY")
