@@ -5,7 +5,7 @@ const BtnIRef =document.getElementById("botonInscripcionR")
 
 function cargarHorarioReflexologia (){
 
-    const contenido =  `
+    const contenidoR =  `
                 <div class="w-full p-4 overflow-auto flex items-center justify-center text-lg text-center">
                     <table class="min-w-full table-auto bg-cyan-300 border-collapse rounded-lg overflow-hidden">
                         <thead>
@@ -95,11 +95,8 @@ function cargarHorarioReflexologia (){
                     </table>
                     
                 </div>
-               <div class="flex justify-center ">
-        <button id="BtnInscribirseRef" class=" border border-cyan-50 my-5 bg-cyan-500 hover:bg-gradient-to-r from-cyan-500 to-cyan-700 text-white font-bold px-4 rounded py-2 transform transition-transform hover:scale-105">Inscripcion </button>
-    </div>
             `;
-            return contenido;
+            return contenidoR;
         }
         btnHorariosRef.addEventListener('click', () => {
             const horarioContainerRef = document.getElementById('contenedorInfoR');
@@ -108,12 +105,16 @@ function cargarHorarioReflexologia (){
 
             
         });
+        botonInscripcionR.addEventListener('click', () => {
+
+            window.location.href = '../pages/inscripcionR.html';
+        });
 function cargarFormularioRef (){
 
             const formularioRefflexologia =  `<div   class="container mx-auto p-4">
         <h1 class="text-3xl font-bold text-center mb-6 text-green-600">Inscripción Curso Yoga</h1>
         <div class="flex items-center justify-center">
-            <form id="formularioIY" class="bg-green-200 p-6 rounded-lg shadow-md w-full max-w-md">
+            <form id="formularioIR" class="bg-green-200 p-6 rounded-lg shadow-md w-full max-w-md">
                 <div class="mb-4">
                     <label for="nombre"  class="block text-green-700 text-lg font-bold mb-2 text-left">Nombre:</label>
                     <input type="text" id="nombre" name="nombre"  placeholder="Ingrese su nombre " class="  text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">

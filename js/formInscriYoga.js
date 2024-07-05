@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // BUSCO el curso de Yoga en el array CURSOS
     const cursoYoga = CURSOS.find(curso => curso.nombre === 'Yoga');
+    // Cargo los posibles inscriptos desde localStorage al inicio 
+       const inscriptosYogaGuardados = localStorage.getItem('inscriptosYoga');
+       if (inscriptosYogaGuardados) {
+           cursoYoga.inscriptosYoga = JSON.parse(inscriptosYogaGuardados); 
+       }
 
     form.addEventListener('submit', (e) => { 
         e.preventDefault();
@@ -40,6 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         cursoYoga.inscriptosYoga.push(inscripto);// tomo estos datos ingresados y los ingreso al array inscriptosYoga
         form.reset();
+        // despues de hacer el push a inscriptosyoga los guardo en el LS bajo el k 'inscriptosYoga'
+        localStorage.setItem('inscriptosYoga', JSON.stringify(cursoYoga.inscriptosYoga));
 
         Swal.fire({
             imageUrl: '../assets/namaste.gif',
@@ -48,8 +55,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
             title: 'Inscripción exitosa',
             text: `Bienvenido ${nombre} ${apellido} a YOGA`,
             showConfirmButton: false,
-            timer: 3000,
+            timer: 3500,
             background: '#bbf7d0',
+        }).then(() => {
+            // Después de mostrar inscripcion exitosa y 3s muestro sidesea otro curso
+            Swal.fire({
+                title: '¿Desea inscribirse a otro curso?',
+                imageUrl: '../assets/inscripcionNueva.gif',
+                imageWidth: 100, 
+                imageHeight: 100,
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No',
+                background: '#bbf7d0',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // si pone si mando al index
+                    window.location.href = '../index.html';
+                } else {
+                    Swal.fire({
+                        imageUrl: '../assets/pose-de-yoga.gif',
+                        imageWidth: 100, 
+                        imageHeight: 100,
+                        title: `Gracias por inscribirse a YOGA  `,
+                        showConfirmButton: false,
+                        timer: 4000,
+                        background: '#bbf7d0',
+                        
+                    }).then(function () {
+                        window.location.href = '../index.html';
+//AQUI SE SEGUIRIA CON EL PAGO
+                    } );
+                }
+            });
         });
     });
 

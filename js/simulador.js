@@ -7,9 +7,13 @@ const selectCuotas = document.querySelector("select#cuotas");
 const divPrecioTotal = document.getElementById("precioTotal"); 
 const divErrorFCampos = document.getElementById("errorFCampos"); 
 const botonultimaCot = document.querySelector("button#btnUltimacot");
+// conexion a botones del index de fotos que se agrandan estos tres de abajo
 const botonInscripcion = document.getElementById('inscripcionYoga');
 const btnInscripcionRef = document.getElementById("inscripcionRef")
 const btnInscripcionK = document.getElementById("inscripcionKun")
+//////////////////////////////////////////////////////////////////////////////
+
+    
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,12 +60,10 @@ function cargarCursos() {
 }
 
 
-function mostrarPrecio() {
+
     const cursoSeleccionado = CURSOS.find(curso => curso.codigo == selectCurso.value);
-    if (cursoSeleccionado) {
-        notificarPrecio.textContent = `El valor del curso  ${cursoSeleccionado.nombre } es de : $${cursoSeleccionado.precio}`;
-    }
-}
+    
+
 function recuperarUltimaCotizacion() {
     return JSON.parse(localStorage.getItem("ultimaCotizacion"))// trae con el get lo que esta el el LS
     // devuelve cotización ó null (si no hubo)
@@ -78,44 +80,41 @@ function guardarCotizacionUltimoCursoLS() {
 function cotizarCurso() {
     const cursoSeleccionado = CURSOS.find(curso => curso.codigo == selectCurso.value);
     const numeroCuotas = parseInt(selectCuotas.value);
-    if (cursoSeleccionado && numeroCuotas ) {
+
+    if (cursoSeleccionado && numeroCuotas) {
         const precioTotal = cursoSeleccionado.precio / numeroCuotas;
         Swal.fire({
             title: `Cotización para ${cursoSeleccionado.nombre}`,
-            text: `Precio por cuota (${numeroCuotas}): $${precioTotal.toFixed(2)}`,
+            html: `El precio de ${cursoSeleccionado.nombre} es ${cursoSeleccionado.precio} <br> Precio por cuota (${numeroCuotas}): $${precioTotal.toFixed(2)}`,
             imageUrl: '../assets/geld.gif',
             imageWidth: 100,
             imageHeight: 100,
             confirmButtonText: `Desea inscribirse en ${cursoSeleccionado.nombre}`,
             background: '#fde68a',
-            timer:9000,
-        }).then((result) => {// voy preguntando si el codigo es tal para redireccionar a la inscripcion correspondiente
-            if (result.isConfirmed && cursoSeleccionado.codigo === 1) {
-              
-                window.location.href = './pages/yoga.html';
-
-            }else if(result.isConfirmed && cursoSeleccionado.codigo === 2){
-                window.location.href = './pages/reflexologia.html';
-
-            }
-            else {
-                window.location.href ='./pages/kundalini.html'
-
+            timer: 9000,
+        }).then((result) => {
+            // Voy preguntando si el codigo es tal para redireccionar a la inscripcion correspondiente
+            if (result.isConfirmed) {
+                if (cursoSeleccionado.codigo === 1) {
+                    window.location.href = './pages/yoga.html';
+                } else if (cursoSeleccionado.codigo === 2) {
+                    window.location.href = './pages/reflexologia.html';
+                } else if (cursoSeleccionado.codigo === 3) {
+                    window.location.href = './pages/kundalini.html';
+                } else {
+                    window.location.href = './index.html';// si pasa el timer se queda en index
+                }
             }
         });
         guardarCotizacionUltimoCursoLS();
+    } else {
+        alertFaltaCampos();
     }
-    else  {
-      
-       alertFaltaCampos();
-    }
-       
-
-    }
+}
 
 
 
-selectCurso.addEventListener("change", mostrarPrecio); //Si el usuario selecciona una opción diferente a seleccione... llama a mostrar
+
 botonCotizar.addEventListener("click", cotizarCurso);
 
 cargarCursos();
