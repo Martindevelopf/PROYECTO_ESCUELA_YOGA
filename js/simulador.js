@@ -47,7 +47,7 @@ btnInscripcionRef.addEventListener("click",()=>{
 btnInscripcionK.addEventListener("click",()=>{
 
 
-window.location.href ='./pages/kundalini.html'
+window.location.href ='./pages/KundaliniWebs/kundalini.html'
 
 })
 
@@ -100,7 +100,7 @@ function cotizarCurso() {
                 } else if (cursoSeleccionado.codigo === 2) {
                     window.location.href = './pages/reflexologia.html';
                 } else if (cursoSeleccionado.codigo === 3) {
-                    window.location.href = './pages/kundalini.html';
+                    window.location.href = './pages/KundaliniWebs/kundalini.html';
                 } else {
                     window.location.href = './index.html';// si pasa el timer se queda en index
                 }
