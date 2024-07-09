@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async(event) => {
     });
     
     btnInscripcionRef.addEventListener("click", () => {
-        window.location.href = './pages/reflexologia.html';
+        window.location.href = './pages/ReflexologiaWebs/reflexologia.html';
     });
     
     btnInscripcionK.addEventListener("click", () => {
