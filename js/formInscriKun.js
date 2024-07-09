@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', async(event) => { 
+    await obtenerCursos()
+
+   init()
+});
+function init(){
     const form = document.getElementById('KundForm');
     const verInscriptosBtn = document.getElementById('verInscriptosKun');
 
@@ -134,4 +139,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
             background: '#D8B4FE',
         });
     }
-});
+};

@@ -1,14 +1,19 @@
-document.addEventListener('DOMContentLoaded', (event) => { 
+document.addEventListener('DOMContentLoaded', async(event) => { 
+     await obtenerCursos()
+
+    init()
+});
+function init(){
     const form = document.getElementById('yogaForm');
     const verInscriptosBtn = document.getElementById('verInscriptos');
-
+    
     // BUSCO el curso de Yoga en el array CURSOS
-    const cursoYoga = CURSOS.find(curso => curso.nombre === 'Yoga');
+    const cursoYoga =  CURSOS.find(curso => curso.nombre === "Yoga");
     // Cargo los posibles inscriptos desde localStorage al inicio 
-       const inscriptosYogaGuardados = localStorage.getItem('inscriptosYoga');
-       if (inscriptosYogaGuardados) {
-           cursoYoga.inscriptosYoga = JSON.parse(inscriptosYogaGuardados); 
-       }
+    const inscriptosYogaGuardados = localStorage.getItem('inscriptosYoga');
+    if (inscriptosYogaGuardados) {
+        cursoYoga.inscriptosYoga = JSON.parse(inscriptosYogaGuardados); 
+    }
 
     form.addEventListener('submit', (e) => { 
         e.preventDefault();
@@ -129,4 +134,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
             background: '#bbf7d0',
         });
     }
-});
+} 
+    
+
+//     const CURSOS1 = [];
+// //const URLCursos = "js/cursos.json"; // supuesta app backend
+// const URLCursos1 = "https://668c29a80b61b8d23b0c9c4e.mockapi.io/CURSOS";
+//     function obtenerCursos1() {
+//         // petición fetch para traer los cursos
+//         fetch(URLCursos1)
+//         .then((response) => response.json()) // haría como un parseo
+//         .then((data) => CURSOS1.push(...data)) // se guardan los objetos guardados en data
+//         .catch((error) => {
+//             console.error("Error al obtener los cursos:", error);
+//         });
+//     }
+//     obtenerCursos1() 

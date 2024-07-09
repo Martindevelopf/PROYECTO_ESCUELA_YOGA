@@ -11,7 +11,7 @@ formularioCon.addEventListener('submit', (e) => {
         color: "#000000",
         timer: 3000,
         showConfirmButton: false,
-        background: "#fde68a",
+        background: "#60A5FA",
     }).then(() => {
 
         window.location.href = '../index.html';

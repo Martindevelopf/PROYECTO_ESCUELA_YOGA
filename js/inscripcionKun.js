@@ -97,14 +97,15 @@ function cargarHorarioKun (){
 
             `;
         }
-
-VerHorariosKun.addEventListener('click', () => {
-            const horarioContainerK = document.getElementById('contenedorInfoK');
-            horarioContainerK.innerHTML = cargarHorarioKun();
-            VerHorariosKun.style.display = 'none'; //con none lo oculto al boton de ver horarios
-        });
-        btnInscripcionKun.addEventListener('click', () => {
-
+function initForm (){
+    VerHorariosKun.addEventListener('click', () => {
+        const horarioContainerK = document.getElementById('contenedorInfoK');
+        horarioContainerK.innerHTML = cargarHorarioKun();
+        VerHorariosKun.style.display = 'none'; //con none lo oculto al boton de ver horarios
+    });
+    btnInscripcionKun.addEventListener('click', () => {
         window.location.href = '../KundaliniWebs/inscripcionKun.html';
     });
+}
+initForm()
     
