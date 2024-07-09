@@ -114,7 +114,7 @@ function cotizarCurso() {
                 if (cursoSeleccionado.codigo === "1") {
                     window.location.href = './pages/yoga.html';
                 } else if (cursoSeleccionado.codigo === "2") {
-                    window.location.href = './pages/reflexologia.html';
+                    window.location.href = './pages/ReflexologiaWebs/reflexologia.html';
                 } else if (cursoSeleccionado.codigo === "3") {
                     window.location.href = './pages/KundaliniWebs/kundalini.html';
                 } else {
